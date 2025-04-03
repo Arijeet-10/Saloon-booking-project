@@ -146,44 +146,44 @@ cancelOrder.addEventListener("click",()=>{
 
   //Send mail To Customer through our email id
 
-  async function sentMail(){
-    try {
-        // First send to appointment endpoint
-        let res1 = await fetch("http://localhost:8000/book/appo", {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-                Authorization: localStorage.getItem("token")
-            },
-            body: JSON.stringify(order_data)
-        });
+//   async function sentMail(){
+//     try {
+//         // First send to appointment endpoint
+//         let res1 = await fetch("http://localhost:8000/book/appo", {
+//             method: 'POST',
+//             headers: {
+//                 'content-type': 'application/json',
+//                 Authorization: localStorage.getItem("token")
+//             },
+//             body: JSON.stringify(order_data)
+//         });
 
-        // Then send to local data endpoint
-        let res2 = await fetch("http://localhost:8000/addDataToBackend/add", {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-                Authorization: localStorage.getItem("token")
-            },
-            body: JSON.stringify({
-                ...order_data,
-                name: shopData.name,
-                location: shopData.location,
-                image: shopData.image
-            })
-        });
+//         // Then send to local data endpoint
+//         let res2 = await fetch("http://localhost:8000/addDataToBackend/add", {
+//             method: 'POST',
+//             headers: {
+//                 'content-type': 'application/json',
+//                 Authorization: localStorage.getItem("token")
+//             },
+//             body: JSON.stringify({
+//                 ...order_data,
+//                 name: shopData.name,
+//                 location: shopData.location,
+//                 image: shopData.image
+//             })
+//         });
 
-        if (res1.ok && res2.ok) {
-            alert("Appointment booked successfully!");
-            // window.location.href = "index.html";
-        } else {
-            throw new Error("Failed to save appointment");
-        }
+//         if (res1.ok && res2.ok) {
+//             alert("Appointment booked successfully!");
+//             // window.location.href = "index.html";
+//         } else {
+//             throw new Error("Failed to save appointment");
+//         }
 
-    } catch (error) {
-        alert("Something went wrong: " + error.message);
-        console.log(error);
-    }
-}
+//     } catch (error) {
+//         alert("Something went wrong: " + error.message);
+//         console.log(error);
+//     }
+// }
 
-sentMail();
+// sentMail();
