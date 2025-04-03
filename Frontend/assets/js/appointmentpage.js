@@ -149,7 +149,7 @@ cancelOrder.addEventListener("click",()=>{
 //   async function sentMail(){
 //     try {
 //         // First send to appointment endpoint
-//         let res1 = await fetch("http://localhost:8000/book/appo", {
+//         let res1 = await fetch("https://saloon-booking-project-backend.onrender.com/book/appo", {
 //             method: 'POST',
 //             headers: {
 //                 'content-type': 'application/json',
@@ -159,7 +159,7 @@ cancelOrder.addEventListener("click",()=>{
 //         });
 
 //         // Then send to local data endpoint
-//         let res2 = await fetch("http://localhost:8000/addDataToBackend/add", {
+//         let res2 = await fetch("https://saloon-booking-project-backend.onrender.com/addDataToBackend/add", {
 //             method: 'POST',
 //             headers: {
 //                 'content-type': 'application/json',

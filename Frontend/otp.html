@@ -93,7 +93,7 @@ let fourth=document.querySelector("#fourth").value;
        password:p.password,
        otp:jhola
     };
-    let register_request = await fetch("http://localhost:8000/user/register", {
+    let register_request = await fetch("https://saloon-booking-project-backend.onrender.com/user/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

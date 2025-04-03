@@ -9,7 +9,7 @@ let order_data = JSON.parse(localStorage.getItem("pastdata"))
 
 
 const sendData=()=>{
-    let res=fetch('http://localhost:8000/addDataToBackend/add',{
+    let res=fetch('https://saloon-booking-project-backend.onrender.com/addDataToBackend/add',{
         method:"POST",
         body:{
             name:shopData.name,

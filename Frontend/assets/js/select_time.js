@@ -33,7 +33,7 @@ let choosedate = document.getElementById("choose");
 async function sentMail(orderData) {
   try {
     // First endpoint to book appointment
-    let res1 = await fetch("http://localhost:8000/book/appo", {
+    let res1 = await fetch("https://saloon-booking-project-backend.onrender.com/book/appo", {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -43,7 +43,7 @@ async function sentMail(orderData) {
     });
 
     // Second endpoint to store booking data locally on the backend
-    let res2 = await fetch("http://localhost:8000/addDataToBackend/add", {
+    let res2 = await fetch("https://saloon-booking-project-backend.onrender.com/addDataToBackend/add", {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
