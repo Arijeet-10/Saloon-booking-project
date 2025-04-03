@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Sign Up
+    </title>
+    <link rel="stylesheet" href="./assets/css/signup.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- /////// -->
+    <!-- <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> -->
+  
+</head>
+
+<body>
+    <div class="Sign_Up">
+    <div class="Sign_Up_Contianer">
+        <!-- Navbar -->
+        <div class="Sign_Up_Navbar">
+          <img id="logo" style="width: 30%;" src="./logos/Beautygem_login-signpage.png" alt="logo">
+            <a href="login.html" class="Sign_Up_Login">Log In</a>
+        </div>
+        <!-- Get Sarted -->
+        <div class="Sign_Up_GetStarted">
+            <p class="Sign_Up_GetStarted_Get"> Get started with Beautygem</p>
+            <p class="Sign_Up_GetStarted_Create"> Create a free account to start Booking </p>
+            <p class="SIgn_Up_GetStarted_Credit"> No credit card required · Unsubscribe at any time</p>
+        </div>
+        <!--Sign Up Form -->
+        <div class="Sign_Up_Form">
+            <label class="Sign_Up_Form_SignUp"> Sign Up</label>
+            <input type="text" name="email" id="email" placeholder="Enter email" required="true" oninput="validation()"/>
+            <input type="password" name="password" id="password" placeholder="Choose password" required="true" oninput="validation()"/>
+            <!-- terms check box -->
+            <label class="Sign_Up_Terms">
+                <input type="Checkbox" class="Sign_Up_Checkbox" id="Sign_Up_Checkbox" required checked>
+                I agree to the
+                <span class="Sign_Up_Checkmark"></span>
+                <a href="#">Terms of Use</a>
+            </label>
+            <!-- create button -->
+            <a href="#" style="text-decoration: none;"><button  class="Sign_UP_Create_Button" id="signup"> CREATE FREE ACCOUNT </button></a>
+            <a href="./adminpage/html/adminlogin.html" style="text-decoration: none;"><button  class="Sign_UP_Create_Button" id="admin">Admin Side</button>
+            <h4 class="Sign_Up_error Sign_Up_error_msg" id="Sign_Up_error"> You must accept the terms of service </h4>
+            <!-- <p class="Sign_Up_OR"><img
+                    src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0HBwcHBxAQBwcHBw0HBwcHBw8ICQcNIBEWIiARFR8kHUAjIiYxHRUfITM5MTU3OjouIzQ3QDM4TjQyMjcBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAKgBLAMBIgACEQEDEQH/xAAaAAEBAQEBAQEAAAAAAAAAAAAAAQcGBAUD/8QALBABAAAFBQEAAgAEBwAAAAAAAAMEBVSUARUX0dMCBhEhgaGxBxITFDFhcf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDcFQBRAFEAUQBRAFQAUQBRAFEAAAAAAAAAAAAAAAAAAAAAURQRQBBUAFQAVABUAAABQQUBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFQBRFAEAVABRAFEAFQBRAFEAAAAAAAAAAAAAAAAAAAAAAAAUEAAFQAVABUABQQFBAUEAAAAAAAAAAAAAAAAAAABRABUAFQB8T8v/J5b8Spf1Vql8xY0v8AMb4gf6clC+YsX6+tdf8AvXTT+rhueqLb1DDlvZqEeBDmYesKY+PmPC+tf3rDjQ9Inxr/AC1eXZZK1l8CF0DOeeqLb1DDlvY56otvUMOW9mjbLJWsvgQujZZK1l8CF0DOeeqLb1DDlvY56otvUMOW9mjbNJWsvgQujZZK1l8CF0DOeeqLb1DDlvY56otvUMOW9mjbNJWsvgQujZZK1l8CF0DOeeqLb1DDlvY56otvUMOW9mjbLJWsvgQujZZK1l8CF0DOeeqLb1DDlvY56otvUMOW9mjbLJWsvgQujZpK1l8CF0DOeeqLb1DDlvY56otvUMOW9mjbLJWsvgQujZZK1l8CF0DOeeqLb1DDlvY56otvUMOW9mjbLJWsvgQujZZK1l8CF0DOeeqLb1DDlvY56otvUMOW9mjbLJWsvgQujZZK1l8CF0DOeeqLb1DDlvY56otvUMOW9mjbLJWsvgQujZZK1l8CF0DOeeqLb1DDlvY56otvUMOW9mjbLJWsvgQujZZK1l8CF0DOeeqLb1DDlvY56otvUMOW9mjbLJWsvgQujZZK1l8CF0DOeeqLb1DDlvZ0X4T/AIk0/wDNJ2ZkKXDmZeYlZb/d/e4S0OH8ffx/m00/hr8/ev8AH966f8/r+7pNlkrWXwIXT95aRgSmv1rKQocrr96fr71l5f4g6/f/AL+tAehABUAAAAAAFBBQEFAQUBBQEFAQUBBQEFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAFQAFQAVABUAAAAAAAAAAAAAAAAAAAAABQEBQQFARQBFAEUAABFAAAEFAQVAAUEBQQFBAUEFQAVABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAH/9k="
+                    alt="">
+                <span> OR </span> </p> -->
+            <div class="underline">
+                <div></div>
+                <p>OR</p>
+                <div></div>
+
+            </div>
+
+            <!-- google button -->
+            <div class="Sign_Up_Google_Button">
+                <a href="https://calm-colt-uniform.cyclic.app/auth/google" class="Sign_Up_Google">
+                    <img src="https://clockify.me/assets/ui-icons/icon-google.svg" alt="Google">
+                    <span class="Sign_Up_Google_Continue">Continue with Google </span> </a>
+            </div>
+
+        </div>
+        <!-- privacy -->
+        <div class="Sign_Up_Privacy">
+            <img src="https://clockify.me/assets/ui-icons/safe.png" alt="Privacy" class="Sign_Up_Privacy_img">
+            <span class="Sign_Up_Privacy_Span"> your data is safe with us : </span>
+            <a href=""> Security Privacy</a>
+        </div>
+    </div>
+</div>
+<!-- test -->
+<div class="spinner-border text-primary" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+</body>
+
+</html>
+<script>
+
+
+  let flag1=false;
+  let flag2=false
+
+    const Register_btn = document.getElementById("signup");
+    Register_btn.addEventListener("click", RegisterFunction);
+    const validation=(e)=>{
+     const docs=document.querySelector('#email').value;
+     const pass=document.querySelector('#password').value;
+     
+    if(docs.split("").includes("@")){
+      flag1=true
+     
+    }
+    if(pass.length>=4){
+      flag2=true
+    }
+
+    if(flag1 && flag2){
+      Register_btn.disabled=false
+      // console.log('allowing')
+    }
+   }
+    Register_btn.disabled=true;
+  
+    // Make API request to server for registering the new user.
+    async function RegisterFunction(event) {
+
+      try {
+        Register_btn.disabled=true;
+        Register_btn.style.backgroundColor='darkblue'
+        // let img=document.createElement('img');
+        // img.src='https://blog.hubspot.com/hs-fs/hubfs/ezgif-7-01995a3a7d61.gif?width=1500&name=ezgif-7-01995a3a7d61.gif'
+        Register_btn.innerHTML=`Loading <div class="dot"></div>`
+        
+        event.preventDefault();
+        let email = document.querySelector("#email").value;
+        let password = document.querySelector("#password").value;
+        
+        let userObj = {
+          email,
+          password,
+       
+        };
+      //  let arr =[]
+      //  arr.push(userObj)
+  // console.log(arr)
+  let flag=true;
+  let status=null
+  if(email=="admin@gmail.com" && password =="admin"){
+    window.location.href ="../Frontend/adminpage/html/index.html"
+  }else{
+
+  
+        let register_request = await fetch(
+          "http://localhost:8000/user/otp",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(userObj),
+          }
+        )
+          .then((res) => res.json())
+          .then((res) => {
+            // console.log(data)
+            if(res.status==401){
+              alert('You have to login');
+              window.location.href="./login.html"
+              flag=false
+            }
+            if(flag){
+              Register_btn.innerHTML=`Create your Account`
+            alert("Please Verify your OTP !");
+           localStorage.setItem("user",JSON.stringify(userObj))
+           localStorage.setItem("back",JSON.stringify(res))
+          
+          
+         window.location.href="./otp.html"
+        }
+        
+
+          })
+          .catch((err) => console.log(err));
+        }
+      } catch (error) {
+        alert("Something went wrong. Please try again later.");
+        // console.log(error)
+      }
+
+
+   
+    }
+
+    document.querySelector("#logo").addEventListener("click",()=>{
+      window.location.href = "index.html"
+    })
+
+    
+
+
+
+  </script>
+  
+  
+
+  
