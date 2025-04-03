@@ -20,14 +20,14 @@ function generate(){
                 // port: 587,
                 service:"gmail",
                 auth: {
-                    user: 'manoharmeena245@gmail.com',
-                  pass: 'wwqvftbyxzotbchw'
+                    user: 'arijeetdas0523@gmail.com',
+                  pass: 'zjmtbbpqbfmeywzg'
                 }
             })
              
             transporter.sendMail({
                 to:req.body.email,
-                from:"manoharmeena245@gmail.com",
+                from:"arijeetdas0523@gmail.com",
                 subject:"One-Time_Password Verification !",
                 text: `OTP Vefification ${OTP}`
             }).then(()=>{
